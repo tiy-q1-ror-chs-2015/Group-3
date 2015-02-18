@@ -4,11 +4,6 @@
 
 body {
   margin: 0;
-  padding: 0; }
-
-h1 {
-  font-family: 'aladdin', sans-serif; }
-
   padding: 0;
   background: #f2f2f2;
   color: #566873;
@@ -16,3 +11,20 @@ h1 {
 
 label input {
   display: inline-block; }
+
+h1 {
+  font-family: 'aladdin', sans-serif;
+  font-size: 15em;
+  text-align: center; }
+
+.meat span {
+  width: 45%;
+  display: block; }
+
+.produce span {
+  width: 45%;
+  display: block; }
+
+.type span {
+  width: 45%;
+  display: block; }
