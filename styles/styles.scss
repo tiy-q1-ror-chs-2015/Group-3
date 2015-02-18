@@ -1,4 +1,13 @@
 body {
   margin: 0;
   padding: 0;
+  background: $white;
+  color: $blue;
+  font-family: $pfont;
+}
+
+label {
+  input{
+    display: inline-block;
+  }
 }
