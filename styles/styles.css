@@ -18,10 +18,13 @@ h1 {
   text-align: center; }
 
 .meat span {
+  width: 45%;
   display: block; }
 
 .produce span {
+  width: 45%;
   display: block; }
 
 .type span {
+  width: 45%;
   display: block; }
