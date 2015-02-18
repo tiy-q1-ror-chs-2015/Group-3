@@ -46,7 +46,7 @@
     <div class="col-md-8">
       <h1>RECIPE GENIE</h1>
       <div class="buttonwrap">
-        <button class="btn btn-default" id="addNew">ADD RECIPE</button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" id="addNew">ADD RECIPE</button>
         <button class="btn btn-default" id="surprise">SURPRISE!</button>
       </div>
     </div>
@@ -67,56 +67,70 @@
   </div>
 </div>
 <!-- add recipe page -->
-<div class="addRecipe">
-  <div class="row">
-    <div class="col-md-12">
-      <form action="" id="newRecipe">
-        <div class="form-group">
-          <label for="recipeName">Recipe Name</label>
-          <input type="text" class="form-control" id="recipeName" placeholder="Enter name">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add New Recipe</h4>
+      </div>
+      <div class="modal-body">
+        <div class="addRecipe">
+          <div class="row">
+            <div class="col-md-12">
+              <form action="" id="newRecipe">
+                <div class="form-group">
+                  <label for="recipeName">Recipe Name</label>
+                  <input type="text" class="form-control" id="recipeName" placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                  <label for="ingredients">Ingredients</label>
+                  <textarea class="form-control" rows="5" id="ingredientInput" placeholder="List Ingredient"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="recipeInstructions">Recipe Instructions</label>
+                  <textarea class="form-control" id="recipeInstructions" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="Photo">Photo</label>
+                  <input type="url" id="recipePhoto">
+                </div>
+                <div class="checkbox">
+                  <h2>Check boxes that apply to your recipe.</h2>
+                  <label><h3>PROTEIN</h3>
+                    <input type="checkbox">none
+                    <input type="checkbox">pork
+                    <input type="checkbox">beef
+                    <input type="checkbox">poultry
+                    <input type="checkbox">fish
+                    <input type="checkbox">eggs
+                  </label>
+                  <label><h3>PRODUCE</h3>
+                    <input type="checkbox">leafy greens
+                    <input type="checkbox">fruit
+                    <input type="checkbox">herbs
+                    <input type="checkbox">garden veggies
+                    <input type="checkbox">root veggies
+                    <input type="checkbox">grains & beans
+                  </label>
+                  <label><h3>TYPE</h3>
+                    <input type="checkbox">appetizer
+                    <input type="checkbox">entree
+                    <input type="checkbox">dessert
+                    <input type="checkbox">breakfast
+                    <input type="checkbox">side
+                    <input type="checkbox">soup & salad
+                  </label>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="ingredients">Ingredients</label>
-          <textarea class="form-control" rows="5" id="ingredientInput" placeholder="List Ingredient"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="recipeInstructions">Recipe Instructions</label>
-          <textarea class="form-control" id="recipeInstructions" rows="5"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="Photo">Photo</label>
-          <input type="url" id="recipePhoto">
-        </div>
-        <div class="checkbox">
-          <h2>Check boxes that apply to your recipe.</h2>
-          <label><h3>PROTEIN</h3>
-            <input type="checkbox">none
-            <input type="checkbox">pork
-            <input type="checkbox">beef
-            <input type="checkbox">poultry
-            <input type="checkbox">fish
-            <input type="checkbox">eggs
-          </label>
-          <label><h3>PRODUCE</h3>
-            <input type="checkbox">leafy greens
-            <input type="checkbox">fruit
-            <input type="checkbox">herbs
-            <input type="checkbox">garden veggies
-            <input type="checkbox">root veggies
-            <input type="checkbox">grains & beans
-          </label>
-          <label><h3>TYPE</h3>
-            <input type="checkbox">appetizer
-            <input type="checkbox">entree
-            <input type="checkbox">dessert
-            <input type="checkbox">breakfast
-            <input type="checkbox">side
-            <input type="checkbox">soup & salad
-          </label>
-        </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <!-- set up as modal? -->
+      </div>
     </div>
   </div>
 </div>
@@ -131,6 +145,7 @@
     </div>
   </div>
 </div>
+
 
 
 
