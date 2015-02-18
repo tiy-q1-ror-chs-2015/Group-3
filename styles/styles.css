@@ -1,5 +1,14 @@
+@font-face {
+  font-family: 'aladdin';
+  src: url(../aladdin.ttf); }
+
 body {
   margin: 0;
+  padding: 0; }
+
+h1 {
+  font-family: 'aladdin', sans-serif; }
+
   padding: 0;
   background: #f2f2f2;
   color: #566873;
