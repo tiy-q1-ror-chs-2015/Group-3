@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :recipes do
     collection do
       get 'random'
+      get 'search'
     end
   end
   
