@@ -17,24 +17,24 @@ var RecipeView = Backbone.View.extend({
 
 //collection view
 var RecipeCollectionView = Backbone.View.extend({
-el:$('.container'),
+el:$('.addRecipe'),
 initialize: function() {
   console.log('recipe collection is initialized');
-  this.addAllRecipes();
+  // this.addAllRecipes();
 },
-events {
+events: {
   "submit #newRecipe": "createRecipe"
 },
 createRecipe: function(event) {
   event.preventDefault();
   console.log("create recipe");
   var newRecipe = {
-    title: $('#newRecipe').find("input[name='title']").val(),
-    ingredients: $('#newRecipe').find("input[name='ingredients']").val(),
+    recipeName: $('#newRecipe').find("input[name='recipeName']").val(),
+    ingredients: $('#newRecipe').find("textarea[name='ingredients']").val(),
     instructions: $('#newRecipe').find("textarea[name='instructions']").val(),
-    photo: $('#newRecipe').find("input[name='photo']").val(),
+    image: $('#newRecipe').find("input[name='photo']").val(),
     category: $('#newRecipe').find("input[name='category']").val(),
-    searchIng: $('#newRecipe').find("input[name='searchIng']").val()
+    searchIng: $('#newRecipe').find("checkbox[name='searchIng']").val()
   }; //end template values
   console.log("newRecipe", newRecipe);
 
@@ -51,7 +51,7 @@ createRecipe: function(event) {
 },
 addOneRecipe : function(recipe) {
   var recipeView = new RecipeView({model: recipe});
-  this.$el.append(RecipeView.render().el);
+  this.$el.append(recipeView.render().el);
   alert("Recipe added!");
 }
 });//end appview

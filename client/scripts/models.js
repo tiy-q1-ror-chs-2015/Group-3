@@ -1,6 +1,6 @@
 //recipe models
 var RecipeModel = Backbone.Model.extend ({
-  urlRoot: 'http:localhost:9000/recipes/',
+  urlRoot: 'http://tiy-fee-rest.herokuapp.com/collections/lindsayeisbergrecipes2',
   idAttributes: '_id',
   defaults: function (){
     return {
