@@ -15,3 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore the secrets.yml because this is where we keep our secrets
+# (DUH!)
+/config/secrets.yml

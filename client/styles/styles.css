@@ -12,11 +12,11 @@ body {
 label input {
   display: inline-block; }
 
-h1 {
+/* h1 {
   font-family: 'aladdin', sans-serif;
   font-size: 15em;
-  text-align: center; }
-
+  text-align: center;
+} */
 .meat span {
   width: 45%;
   display: block; }
@@ -28,3 +28,26 @@ h1 {
 .type span {
   width: 45%;
   display: block; }
+
+.options {
+  display: flex;
+  justify-content: center; }
+
+.results {
+  border: 5px double #8c7354;
+  border-radius: 5px;
+  margin: 30px;
+  width: 300px;
+  height: 500px;
+  opacity: 0.75;
+  cursor: pointer; }
+  .results img {
+    width: 100%; }
+  .results h3 {
+    padding: 20px; }
+  .results:hover {
+    opacity: 1;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease; }
