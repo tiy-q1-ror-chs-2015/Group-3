@@ -5,7 +5,16 @@ class RecipesController < ApplicationController
   end
 
   def random
-    rand_record_idx = rand(Recipe.count)
-    @recipe = Recipe.offset(rand_record_idx).first
+    @recipe = Recipe.random_recipe
+  end
+
+  def search
+    # right now we are ignoring all parameters and returning 10 random
+    # recipes
+    # TODO: implement real search
+    @recipes = []
+    10.times do
+      @recipes.push(Recipe.random_recipe)
+    end
   end
 end
