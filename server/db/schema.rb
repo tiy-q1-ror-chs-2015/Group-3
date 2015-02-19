@@ -33,12 +33,31 @@ ActiveRecord::Schema.define(version: 20150218184945) do
     t.string   "quantity"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+<<<<<<< Updated upstream
+=======
+  end
+
+  create_table "recipe_types", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "recipe_id"
+    t.integer  "type_id"
+>>>>>>> Stashed changes
   end
 
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< Updated upstream
+=======
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+>>>>>>> Stashed changes
   end
 
 end
