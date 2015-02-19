@@ -1,5 +1,5 @@
 //recipe models
-var recipeModel = Backbone.Model.extend ({
+var RecipeModel = Backbone.Model.extend ({
   urlRoot: 'http:localhost:9000/recipes/',
   idAttributes: '_id',
   defaults: function (){

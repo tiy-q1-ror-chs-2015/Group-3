@@ -6,6 +6,10 @@ body {
   font-family: $pfont;
 }
 
+h1, h2, h3 {
+  font-family: $head-font;
+}
+
 label {
   input{
     display: inline-block;
@@ -23,6 +27,8 @@ label {
   span{
     width: 45%;
     display: block;
+    font-family: $pfont;
+    font-size: 1.3em;
   }
 }
 .produce {
@@ -30,6 +36,8 @@ label {
   span{
     width: 45%;
     display: block;
+    font-family: $pfont;
+    font-size: 1.3em;
   }
 }
 .type {
@@ -37,6 +45,8 @@ label {
   span{
     width: 45%;
     display: block;
+    font-family: $pfont;
+    font-size: 1.3em;
   }
 }
 
@@ -60,6 +70,7 @@ label {
   }
   h3 {
     padding: 20px;
+    font-family: $head-font;
   }
   &:hover {
     opacity:1;

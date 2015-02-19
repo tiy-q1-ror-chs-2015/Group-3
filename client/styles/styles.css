@@ -1,13 +1,15 @@
 @font-face {
   font-family: 'aladdin';
   src: url(../aladdin.ttf); }
-
 body {
   margin: 0;
   padding: 0;
   background: #f2f2f2;
   color: #566873;
   font-family: "futura-pt-condensed", sans-serif; }
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif; }
 
 label input {
   display: inline-block; }
@@ -19,15 +21,21 @@ label input {
 } */
 .meat span {
   width: 45%;
-  display: block; }
+  display: block;
+  font-family: "futura-pt-condensed", sans-serif;
+  font-size: 1.3em; }
 
 .produce span {
   width: 45%;
-  display: block; }
+  display: block;
+  font-family: "futura-pt-condensed", sans-serif;
+  font-size: 1.3em; }
 
 .type span {
   width: 45%;
-  display: block; }
+  display: block;
+  font-family: "futura-pt-condensed", sans-serif;
+  font-size: 1.3em; }
 
 .options {
   display: flex;
@@ -44,10 +52,13 @@ label input {
   .results img {
     width: 100%; }
   .results h3 {
-    padding: 20px; }
+    padding: 20px;
+    font-family: "Playfair Display", serif; }
   .results:hover {
     opacity: 1;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
     -webkit-transition: all 1s ease;
     transition: all 1s ease; }
+
+/*# sourceMappingURL=styles.css.map */
