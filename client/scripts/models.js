@@ -10,5 +10,6 @@ var RecipeModel = Backbone.Model.extend ({
   },
   initialize: function() {
     console.log('model created');
-  }
+  },
+
 });
