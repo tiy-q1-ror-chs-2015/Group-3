@@ -8,6 +8,9 @@ body {
   color: #566873;
   font-family: "futura-pt-condensed", sans-serif; }
 
+h1, h2, h3 {
+  font-family: "Playfair Display", serif; }
+
 label input {
   display: inline-block; }
 
@@ -16,18 +19,12 @@ label input {
   font-size: 15em;
   text-align: center;
 } */
-.meat span {
-  width: 45%;
-  display: block; }
-
-.produce span {
+span {
   width: 45%;
   display: block;
-  color: red; }
-
-.type span {
-  width: 45%;
-  display: block; }
+  font-family: "futura-pt-condensed", sans-serif;
+  font-size: 1.3em;
+  display: inline-block; }
 
 .options {
   display: flex;
@@ -44,7 +41,8 @@ label input {
   .results img {
     width: 100%; }
   .results h3 {
-    padding: 20px; }
+    padding: 20px;
+    font-family: "Playfair Display", serif; }
   .results:hover {
     opacity: 1;
     -moz-transition: all 1s ease;

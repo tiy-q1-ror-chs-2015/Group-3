@@ -1,6 +1,6 @@
 //recipe collection
 
-var recipeCollection = Backbone.Collection.extend({
-  url: 'http:localhost:9000/recipes/',
-  model: recipeModel
+var RecipeCollection = Backbone.Collection.extend({
+  url: 'http://tiy-fee-rest.herokuapp.com/collections/lindsayeisbergrecipes2',
+  model: RecipeModel
 });
