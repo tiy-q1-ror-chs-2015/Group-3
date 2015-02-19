@@ -28,11 +28,12 @@ createRecipe: function(event) {
   event.preventDefault();
   console.log("create recipe");
   var newRecipe = {
-    title: $('#newRecipe').find("input[name='']").val(),
-    ingredients: $('#newRecipe').find("input[name='']").val(),
-    instructions: $('#newRecipe').find("input[name='']").val(),
-    photo: $('#newRecipe').find("input[name='']").val(),
-    category: $('#newRecipe').find("input[name='']").val()
+    title: $('#newRecipe').find("input[name='title']").val(),
+    ingredients: $('#newRecipe').find("input[name='ingredients']").val(),
+    instructions: $('#newRecipe').find("textarea[name='instructions']").val(),
+    photo: $('#newRecipe').find("input[name='photo']").val(),
+    category: $('#newRecipe').find("input[name='category']").val(),
+    searchIng: $('#newRecipe').find("input[name='searchIng']").val()
   }; //end template values
   console.log("newRecipe", newRecipe);
 
