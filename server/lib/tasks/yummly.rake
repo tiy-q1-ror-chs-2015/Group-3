@@ -39,10 +39,12 @@ namespace :yummly do
           ingredient = Ingredient.find_or_create_by!(name: yummly_ingredient)
           recipe.ingredients.push(ingredient)
         end
+        # get image for recipe
+        yummly_ind_recipe = Yummly.find(yummly_recipe.id)
+        recipe.image_src = yummly_ind_recipe.images[0].large_url
+        # save the recipe
         recipe.save!
       end
     end
-    
   end
-
 end
