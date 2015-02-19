@@ -44,5 +44,8 @@ group :development, :test do
 
   # open this thang up for developemtn
   gem 'rack-cors'
+
+  # get yummly data
+  gem 'yummly'
 end
 
