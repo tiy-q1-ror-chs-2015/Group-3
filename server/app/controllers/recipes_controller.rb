@@ -32,6 +32,7 @@ class RecipesController < ApplicationController
       redirect to recipes_path(@new_recipe)
     else
      render json: @new_recipe.errors.full_message, status: 422
+    end
   end
 
   def show
@@ -61,7 +62,4 @@ class RecipesController < ApplicationController
       @recipes.push(Recipe.random_recipe)
     end
   end
-
-  private
-  
 end
