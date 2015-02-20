@@ -4,8 +4,23 @@ namespace :yummly do
 
     # list of search terms to use with yummly
     search_terms = [
-      'hamburger',
-      'onion soup',
+      'chicken',
+      'pork',
+      'beef',
+      'fish',
+      'eggs',
+      'leafy green',
+      'fruit',
+      'garden',
+      'root',
+      'herbs',
+      'grain',
+      'bean',
+      'appetizer',
+      'dessert',
+      'side',
+      'breakfast',
+      'soup',
       'salad',
       'pizza',
       'salmon',
@@ -20,6 +35,7 @@ namespace :yummly do
       'ice cream',
       'velvet cake',
       'pastry',
+      'bacon'
     ]
 
     # for each of the above search terms, get search results from
