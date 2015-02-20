@@ -11,10 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219193800) do
+ActiveRecord::Schema.define(version: 20150220023826) do
+
+  create_table "cuisines", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "flavor_profiles", force: :cascade do |t|
+    t.integer  "recipe_id"
+    t.float    "piquant"
+    t.float    "meaty"
+    t.float    "bitter"
+    t.float    "sweet"
+    t.float    "sour"
+    t.float    "salty"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "ingredients", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recipe_cuisines", force: :cascade do |t|
+    t.integer  "recipe_id"
+    t.integer  "cuisine_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,9 +69,14 @@ ActiveRecord::Schema.define(version: 20150219193800) do
 
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.text     "image_src"
+    t.string   "total_time"
+    t.integer  "rating"
+    t.integer  "number_of_servings"
+    t.text     "source_site_url"
+    t.text     "source_recipe_url"
   end
 
   create_table "types", force: :cascade do |t|
