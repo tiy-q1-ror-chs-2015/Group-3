@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
   # Params:
   # :limit - how many random recipes to return (default 3)
   def random
-    limit = params[:limit] ||= 3
+    limit = params[:limit].to_i ||= 3
     @recipes = []
     limit.times do
       @recipes.push(Recipe.random_recipe)
@@ -25,10 +25,13 @@ class RecipesController < ApplicationController
   # Params:
   # :limit - how many random recipes to return (default 3)
   def search
-    limit = params[:limit] ||= 10
+    limit = params[:limit].to_i ||= 10
     @recipes = []
     limit.times do
       @recipes.push(Recipe.random_recipe)
     end
   end
+
+  private
+  
 end
