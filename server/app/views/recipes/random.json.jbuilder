@@ -1,8 +1,9 @@
-json.name @recipe.name
-json.image_src @recipe.image_src
-
-json.ingredients @recipe.recipe_ingredients do |recipe_ingredient|
-  json.id recipe_ingredient.id
-  json.name Ingredient.find(recipe_ingredient.ingredient_id).name
-  json.qty recipe_ingredient.quantity
+json.recipes @recipes do |recipe|
+  json.id recipe.id
+  json.name recipe.name
+  json.totalTime recipe.total_time
+  json.rating recipe.rating
+  json.numberOfServings recipe.number_of_servings
+  json.imageSrc recipe.image_src
+  json.flavorProfile recipe.flavor_profile
 end

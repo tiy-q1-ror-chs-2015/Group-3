@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recipe_id: 1
+  piquant: 1.5
+  meaty: 1.5
+  bitter: 1.5
+  sweet: 1.5
+  sour: 1.5
+  salty: 1.5
+
+two:
+  recipe_id: 1
+  piquant: 1.5
+  meaty: 1.5
+  bitter: 1.5
+  sweet: 1.5
+  sour: 1.5
+  salty: 1.5
