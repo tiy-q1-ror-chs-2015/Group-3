@@ -4,16 +4,26 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  # RANDOM
+  # ------
+  # Params:
+  # :limit - how many random recipes to return (default 3)
   def random
-    @recipe = Recipe.random_recipe
+    limit = params[:limit] ||= 3
+    @recipes = []
+    limit.times do
+      @recipes.push(Recipe.random_recipe)
+    end
   end
 
+  # SEARCH
+  # ------
+  # Params:
+  # :limit - how many random recipes to return (default 3)
   def search
-    # right now we are ignoring all parameters and returning 10 random
-    # recipes
-    # TODO: implement real search
+    limit = params[:limit] ||= 10
     @recipes = []
-    10.times do
+    limit.times do
       @recipes.push(Recipe.random_recipe)
     end
   end
