@@ -28,8 +28,15 @@ class RecipesController < ApplicationController
     instructions.each do |instruction|
       @new_recipe.recipe_directions.push(RecipeDirection.create!(desc: instruction, step_idx: order_key += 1))
     end
-    @new_recipe.save
-    # TODO: what kind of response do we need to give???
+    if @new_recipe.save
+      respond_to do |format|
+        format.json { render json: @new_recipe.to_json }
+      end 
+    else
+      respond_to do |format|
+        format.json { render json: @new_recipe.errors.full_messages, status: 422 }
+      end
+    end
   end
 
   def show
