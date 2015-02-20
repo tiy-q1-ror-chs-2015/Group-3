@@ -25,6 +25,7 @@ initialize: function() {
 events: {
   "submit #newRecipe": "createRecipe"
 },
+
 createRecipe: function(event) {
   event.preventDefault();
   console.log("create recipe");
@@ -55,3 +56,26 @@ addOneRecipe : function(recipe) {
   alert("Recipe added!");
 }
 });//end appview
+
+
+// // // SEARCH VIEW
+// var SearchView = Backbone.View.extend({
+//   el: $('.options'),
+//   initialize: function() {
+//     this.render();
+//     console.log('search function initialized');
+//   },
+//
+//   events: {
+//     'submit #searchRecipe': 'searchRecipe'
+//   },
+//   render: function() {
+//     console.log('rendering result');
+//  },
+//
+//  searchRecipe: function(e) {
+//    event.preventDefault();
+//    console.log('search activated');
+//
+//  }
+//  });

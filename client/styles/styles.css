@@ -19,12 +19,18 @@ label input {
   font-size: 15em;
   text-align: center;
 } */
+.ingredients {
+  padding-left: 55px; }
+
 span {
   width: 45%;
   display: block;
   font-family: "futura-pt-condensed", sans-serif;
   font-size: 1.3em;
-  display: inline-block; }
+  display: inline-block;
+  padding: 10px; }
+  span:hover {
+    background-color: #A4b8bf; }
 
 .options {
   display: flex;
