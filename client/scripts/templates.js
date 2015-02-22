@@ -2,6 +2,6 @@
 var templates = {};
 
 templates.results = [
-'<img src="<%= image %>"/ >',
-'<h3>Recipe Title</h3>',
+'<img src="<%= item.imageSrc %>"/ >',
+'<h3><%= item.name %></h3>',
 ].join('');

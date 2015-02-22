@@ -10,8 +10,8 @@ var RecipeCollection = Backbone.Collection.extend({
 //   url: 'http://localhost:9000/recipes/create',
 //   model: CreateRecipeModel
 // });
-
-// var SearchResults = Backbone.Collection.extend({
-//   model: RecipeModel,
-//   url: 'http://localhost:9000/recipes' + '/search?limit=10' + $('#searchRecipes').val()
-// });
+//
+var SearchResults = Backbone.Collection.extend({
+  url: 'http://localhost:9000/recipes/search?limit=10',
+  model: SearchModel
+});

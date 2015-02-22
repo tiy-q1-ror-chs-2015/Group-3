@@ -15,7 +15,7 @@ var RecipeModel = Backbone.Model.extend ({
 
 });
 
-// 
+//
 //
 // var CreateRecipeModel = Backbone.Model.extend ({
 //   urlRoot: 'http://localhost:9000/recipes/create',
@@ -32,3 +32,11 @@ var RecipeModel = Backbone.Model.extend ({
 //   },
 //
 // });
+
+var SearchModel = Backbone.Model.extend({
+  urlRoot: 'http://localhost:9000/recipes/search?limit=10',
+  initialize: function() {
+    this.results = new SearchResults( this.get('results'));
+    this.trigger('search:ready', this);
+  }
+});

@@ -58,7 +58,7 @@ addOneRecipe : function(recipe) {
 });//end appview
 
 
-// // // SEARCH VIEW
+// // SEARCH VIEW
 // var SearchView = Backbone.View.extend({
 //   el: $('.options'),
 //   initialize: function() {
@@ -73,9 +73,49 @@ addOneRecipe : function(recipe) {
 //     console.log('rendering result');
 //  },
 //
-//  searchRecipe: function(e) {
+//  searchRecipe: function() {
 //    event.preventDefault();
 //    console.log('search activated');
 //
 //  }
 //  });
+//
+//
+//
+//  var recipeView = new RecipeView({model: recipe});
+//  this.$el.append(recipeView.render().el);
+
+
+
+var SearchView = Backbone.View.extend({
+  template: _.template(templates.results),
+  tagName: 'article',
+  className: 'results',
+  initialize: function () {
+    console.log(this.el);
+  },
+  events: function() {
+    $('#recipeSearch').on('click', function (event){
+          console.log('button fired');
+          event.preventDefault();
+          var searchView = new SearchView;
+          searchView.createSearch();
+        });
+  },
+
+  createSearch: function() {
+    console.log('button triggered create search');
+    var search = new SearchModel({
+      field: this.$el.find('input[name="searchRecipes"]').val()
+    });
+    search.on("search:ready", this.renderResults, this)
+    search.fetch();
+  },
+  renderResults: function(search) {
+    // console.log('rendering result');
+    // var markup = this.template(this.model.toJSON());
+    // this.$el.html(markup);
+    // return this({model: search});
+    search.results();
+  }
+});
