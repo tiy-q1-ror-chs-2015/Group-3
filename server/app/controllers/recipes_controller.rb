@@ -61,17 +61,21 @@ class RecipesController < ApplicationController
 
   # SEARCH
   # ------
+  #
+  # For any parameters given (protein,produce,recipe_type), collect
+  # matching recipes. Return a number of records (up to limit) from
+  # the instersection of the previous sets.
+  # 
   # Params:
-  # :limit - how many recipes to return in search results (default 10)
+  # ------
+  # :limit   - return up to this many records (may be fewer if fewer
+  #            are found)
+  # :offset  - offset our results (useful for pagination)
+  # :protein - comma-separated list of protein keys
+  # :produce - comma-separated list of produce keys
+  # :type    - comma-separated list of recipe types keys
+  # :q       - search term
   def search
-    if params[:limit]
-      limit = params[:limit].to_i
-    else
-      limit = 10
-    end
-    @recipes = []
-    limit.times do
-      @recipes.push(Recipe.random_recipe)
-    end
+    @recipes = Search.new(params)
   end
 end
