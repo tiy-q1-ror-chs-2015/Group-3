@@ -91,6 +91,10 @@ namespace :yummly do
         flavor_hash.each { |k,v| lower_case_flavor_hash[k.downcase]=v }
         new_flavor_profile = FlavorProfile.create!(lower_case_flavor_hash)
         recipe.flavor_profile = new_flavor_profile
+        3.times do |idx|
+          new_direction = RecipeDirection.create!(step_idx:idx+1, desc: Faker::Lorem.sentence(10))
+          recipe.recipe_directions.push(new_direction)
+        end  
         # save the recipe
         recipe.save!
       end

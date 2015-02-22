@@ -20,18 +20,22 @@ class RecipesController < ApplicationController
     @new_recipe = Recipe.new(name: name, image_src: image_src)
     # add the ingredients for the recipe
     ingredients.each do |ingredient|
-      this_ingredient = Ingredient.find_or_create_by(:name, ingredient)
+      this_ingredient = Ingredient.find_or_create_by(name: ingredient)
       @new_recipe.ingredients.push(this_ingredient)
     end
     # add the instructions for the recipe
     order_key = 0
     instructions.each do |instruction|
-      @new_recipe.push(RecipeDirection.create!(desc: instruction, step_idx: order_key += 1))
+      @new_recipe.recipe_directions.push(RecipeDirection.create!(desc: instruction, step_idx: order_key += 1))
     end
     if @new_recipe.save
-      redirect to recipes_path(@new_recipe)
+      respond_to do |format|
+        format.json { render json: @new_recipe.to_json }
+      end 
     else
-     render json: @new_recipe.errors.full_message, status: 422
+      respond_to do |format|
+        format.json { render json: @new_recipe.errors.full_messages, status: 422 }
+      end
     end
   end
 
@@ -44,7 +48,11 @@ class RecipesController < ApplicationController
   # Params:
   # :limit - how many random recipes to return (default 3)
   def random
-    limit = params[:limit].to_i ||= 3
+    if params[:limit]
+      limit = params[:limit].to_i
+    else
+      limit = 3
+    end
     @recipes = []
     limit.times do
       @recipes.push(Recipe.random_recipe)
@@ -54,9 +62,13 @@ class RecipesController < ApplicationController
   # SEARCH
   # ------
   # Params:
-  # :limit - how many random recipes to return (default 3)
+  # :limit - how many recipes to return in search results (default 10)
   def search
-    limit = params[:limit].to_i ||= 10
+    if params[:limit]
+      limit = params[:limit].to_i
+    else
+      limit = 10
+    end
     @recipes = []
     limit.times do
       @recipes.push(Recipe.random_recipe)

@@ -47,5 +47,12 @@ group :development, :test do
 
   # get yummly data
   gem 'yummly'
+
+  gem 'faker'
+
+  # use seed_dump so that we stop pulling data from Yummly each time
+  # we are initializing the database... We're racking up API calls and
+  # it be slo when we could be re-using data.
+  gem 'seed_dump'
 end
 
