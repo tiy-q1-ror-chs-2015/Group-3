@@ -25,6 +25,7 @@ initialize: function() {
 events: {
   "submit #newRecipe": "createRecipe"
 },
+
 createRecipe: function(event) {
   event.preventDefault();
   console.log("create recipe");

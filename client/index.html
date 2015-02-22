@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Recipe Genie</title>
-  <script src="//use.typekit.net/glz5uah.js"></script>
-  <script>try{Typekit.load();}catch(e){}</script>
+<!--   <script src="//use.typekit.net/glz5uah.js"></script>
+<script>try{Typekit.load();}catch(e){}</script> -->
   <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
@@ -18,7 +18,7 @@
     <div class="col-md-3 ingredients">
       <article class="meat">
         <h3>PROTEIN</h3>
-        <span>None</span>
+        <input type="checkbox" name="protein" id="protein" value="None"><label for='protein'>None</label>
         <span>Beef</span>
         <span>Poultry</span>
         <span>Fish</span>
@@ -43,6 +43,9 @@
         <span>Side</span>
         <span>Soup & Salad</span>
       </article>
+      <input type="text" id="searchRecipes" name='searchRecipes'>
+
+      <button type='submit' id='recipeSearch'>Search</button>
     </div>
     <div class="col-md-9">
       <h1>Recipe Genie!</h1>
@@ -150,7 +153,8 @@
 
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/underscore/underscore.js"></script>
+<!--   <script src="bower_components/handlebars/handlebars.js"></script>
+ -->  <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/backbone/backbone.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 

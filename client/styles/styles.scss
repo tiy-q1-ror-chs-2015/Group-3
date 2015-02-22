@@ -21,7 +21,9 @@ label {
   font-size: 15em;
   text-align: center;
 } */
-
+.ingredients {
+  padding-left: 55px;
+}
 
   span{
     width: 45%;
@@ -29,6 +31,10 @@ label {
     font-family: $pfont;
     font-size: 1.3em;
     display: inline-block;
+    padding: 10px;
+    &:hover {
+    background-color: $pale;
+    }
   }
 
 ///RESULTS PAGE
