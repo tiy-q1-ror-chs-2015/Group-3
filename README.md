@@ -204,12 +204,12 @@ the instersection of the previous sets.
 
 **Params:**
 
-:limit: return up to this many records (may be fewer if fewer are found)
-:offset: offset our results (useful for pagination)
-:protein: comma-separated list of protein keys
-:produce: comma-separated list of produce keys
-:type: comma-separated list of recipe types keys
-:q: search term
+- limit: return up to this many records (may be fewer if fewer are found)
+- offset: offset our results (useful for pagination)
+- protein: comma-separated list of protein keys
+- produce: comma-separated list of produce keys
+- type: comma-separated list of recipe types keys
+- q: search term
 
 **Request:**
 
