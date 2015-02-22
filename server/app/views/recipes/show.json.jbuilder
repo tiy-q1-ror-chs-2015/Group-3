@@ -8,8 +8,11 @@ json.flavorProfile @recipe.flavor_profile
 json.recipeTypes @recipe.types.map(&:name)
 json.cuisines @recipe.cuisines.map(&:name)
 # ingredients
-json.ingredients @recipe.recipe_ingredients do |recipe_ingredient|
-  ingredient = Ingredient.find(recipe_ingredient.ingredient_id)
+json.ingredients @ingredients do |ingredient|
   json.name = ingredient.name
-  json.qty = recipe_ingredient.quantity
+end
+# directions
+json.directions @directions do |direction|
+  json.idx = direction.step_idx
+  json.direction = direction.desc
 end
