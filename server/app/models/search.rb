@@ -11,9 +11,9 @@ class Search
 
   PROTEIN_TERMS = {
     'poultry' => ['chicken'],
-    'pork' => ['pork'],
-    'beef' => ['beef','steak'],
-    'fish' => ['salmon','halibut','talapia','swordfish','mahi'],
+    'pork' => ['pork', 'bacon', 'pork chop', 'pork belly'],
+    'beef' => ['beef','steak', 'ground chuck', 'hamburger', 'brisket', 'tenderloin', 'sirloin', 'round'],
+    'fish' => ['salmon','halibut','talapia','swordfish','mahi', 'anchovie', 'crab', 'crawfish', 'oyster', 'tuna', 'scallop', 'shrimp', 'squid', 'trout', 'sardine', 'herring', 'cod', 'flounder', 'catfish'],
     'eggs' => ['egg']
   }
 
