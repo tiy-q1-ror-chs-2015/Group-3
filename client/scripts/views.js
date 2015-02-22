@@ -58,64 +58,51 @@ addOneRecipe : function(recipe) {
 });//end appview
 
 
-// // SEARCH VIEW
-// var SearchView = Backbone.View.extend({
-//   el: $('.options'),
-//   initialize: function() {
-//     this.render();
-//     console.log('search function initialized');
-//   },
-//
-//   events: {
-//     'submit #searchRecipe': 'searchRecipe'
-//   },
-//   render: function() {
-//     console.log('rendering result');
-//  },
-//
-//  searchRecipe: function() {
-//    event.preventDefault();
-//    console.log('search activated');
-//
-//  }
-//  });
-//
-//
-//
-//  var recipeView = new RecipeView({model: recipe});
-//  this.$el.append(recipeView.render().el);
 
+//Search Query View
+// 'use strict';
+var SearchQueryView = Backbone.View.extend({
+    tagName: 'div',
+    el: '#search',
 
+    events: {
+      'submit form': 'submit'
+    },
 
-var SearchView = Backbone.View.extend({
-  template: _.template(templates.results),
-  tagName: 'article',
-  className: 'results',
-  initialize: function () {
-    console.log(this.el);
-  },
-  events: function() {
-    $('#recipeSearch').on('click', function (event){
-          console.log('button fired');
-          event.preventDefault();
-          var searchView = new SearchView;
-          searchView.createSearch();
-        });
-  },
+    initialize: function() {
+      this.listenTo(this.model, 'change', this.render);
+    },
 
-  createSearch: function() {
-    console.log('button triggered create search');
-    var search = new SearchModel({
-      field: this.$el.find('input[name="searchRecipes"]').val()
-    });
-    search.on("search:ready", this.renderResults, this)
-    search.fetch();
-  },
-  renderResults: function(search) {
-    // console.log('rendering result');
-    // var markup = this.template(this.model.toJSON());
-    // this.$el.html(markup);
-    // return this({model: search});
-    search.results();
-  }
+    render: function () {
+      var template = _.template(templates.search);
+      this.$el.html(this.template(this.model.attributes));
+    },
+
+    submit: function (e) {
+        var query;
+
+        e.preventDefault();
+
+        query = this.$el.find('#query').val();
+        if (query) {
+            document.location = '#query/' + query;
+        } else {
+            document.location = '#';
+        }
+    }
+});
+
+//search result view
+'use strict';
+var SearchResultView = Backbone.View.extend({
+   tagName: 'div',
+   className: 'options',
+   initialize: function () {
+     this.listenTo(this.model, 'change', this.render);
+   },
+   render: function () {
+     console.log(this);
+     var template = _.template(templates.searchResults);
+     this.$el.html(this.template(this.model.attributes));
+   }
 });
