@@ -18,12 +18,12 @@ class Search
   }
 
   PRODUCE_TERMS = {
-    'leafy_green' => ['spinach','kale','lettuce'],
-    'root_veggie' => ['carrot','turnip'],
-    'fruit' => ['berry','apple','banana','orange','grape'],
-    'herbs' => ['cliantro','basil'],
-    'garden_veggie' => ['tomato','onion'],
-    'grains_and_beans' => ['bean']
+    'leafy_green' => ['spinach','kale','lettuce', 'collard greens', 'watercress', 'turnips', 'bok choy', 'cabbage', 'swiss chard'],
+    'root_veggie' => ['sweet [potato', 'carrot', 'beet', 'yam', 'turnip', 'parsnip', 'radish', 'ginger', 'rutabaga', 'potato', 'onion', 'garlic'],
+    'fruit' => ['apple', 'apricot', 'avocado', 'banana', 'blackberry', 'blueberry', 'cantaloupe', 'cherry', 'coconut', 'cranberry', 'date', 'fig', 'grape', 'raisin', 'grapefruit', 'honeydew', 'kiwi', 'lemon', 'lime', 'mango', 'watermelon', 'nectarine', 'olive', 'orange', 'papaya', 'peach', 'pear', 'plum', 'pineapple', 'pomegranate', 'raspberry', 'strawberry'],
+    'herbs' => ['cliantro','basil', 'bay leaf', 'caraway', 'cayenne pepper', 'celery', 'chili powder', 'chives', 'cinnamon', 'dill', 'garlic', 'ginger', 'horseradish', 'lemongrass', 'mint', 'nutmeg', 'oregano', 'paprika', 'parsley', 'pepper', 'rosemary', 'saffron', 'sage', 'tarragon', 'thyme', 'vanilla'],
+    'garden_veggie' => ['tomato','onion', 'asparagus', 'cabbage', 'celery', 'corn', 'cucumbers', 'eggplant', 'lettuce', 'green pepper', 'red pepper'],
+    'grains_and_beans' => ['barley', 'rice', 'buckwheat', 'flaxseed', 'oats', 'quinoa', 'rye', 'couscous', 'wild rice', 'wheat', 'black beans', 'black-eyed peas', 'butter beans', 'lima beans', 'corona beans', 'fava beans', 'garbanzo beans', 'chickpeas', 'kidney beans', 'lentils', 'pinto beans', 'soybeans', 'peas']
   }
 
   RECIPE_TYPE_TERMS = {
