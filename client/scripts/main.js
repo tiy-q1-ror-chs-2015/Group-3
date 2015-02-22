@@ -1,35 +1,29 @@
-var searchYum = {
-  init: function() {
-    searchYum.initEvent();
-    searchYum.initStyling();
-  },
-
-  initStyling: function() {
-    console.log('initStyling');
-  },
-
-  initEvent: function() {
-    console.log('initEvent');
-    $('#recipeSearch').on('click', function (event){
-      console.log('button fired');
-      event.preventDefault();
-      searchYum.getSearch();
-    });
-  },
 
 
-  config: {
-    baseURL:'http://localhost:9000/recipes',
-    search: $('.ingredients').find('input[name="searchRecipes"]').val()
-  },
+$(document).ready(function(){
 
-  getSearch: function() {
+  var recipeCollection = new RecipeCollection();
+  recipeCollection.fetch().then(function () {
+    var recipeCollectionView = new RecipeCollectionView({collection: recipeCollection});
+  });
+
+  $('#recipeSearch').on('click', function(e){
+    console.log('button fired');
+    e.preventDefault();
+
+    var find = $('#searchRecipes').val();
+
+    var config = {
+      baseURL:'http://localhost:9000/recipes',
+      search: find
+    };
+
     $.ajax({
-      url: searchYum.config.baseURL + '/search?limit=10' + searchYum.config.search,
+      url: config.baseURL + '/search?q=' + config.search + '&limit=3',
       type: 'GET',
       dataType: 'JSON',
       success: function(data) {
-        console.log(searchYum.config.url);
+        console.log(config.search);
         data.recipes.forEach(function(item, index, array){
           console.log('iteration activated. ', item.name);
           $('.options').append(
@@ -40,69 +34,9 @@ var searchYum = {
           );
         });
       },
-
-      error: function (error) {
+      error: function(error){
         console.log(error);
       }
     });
-  }
-};
-
-$(document).ready(function(){
-
-  var recipeCollection = new RecipeCollection();
-  recipeCollection.fetch().then(function () {
-    var recipeCollectionView = new RecipeCollectionView({collection: recipeCollection});
   });
-  searchYum.init();
 });
-
-
-
-// // 'use strict';
-// var app = (function () {
-//   var _config;
-//   var _initialize;
-//
-//   _config = {
-//     search: $('#search').find('input[name="query"]').val()
-//   };
-//
-//   _initialize = function () {
-//     app.searchQuery = new SearchQuery();
-//     app.searchResult = new SearchResult();
-//
-//     app.searchQueryView = new SearchQueryView({model: app.searchQuery});
-//     app.searchResultView = new SearchResultView({model: app.searchResult});
-//
-//     app.router = new Router();
-//     Backbone.history.start();
-//
-//     app.searchQueryView.render();
-//     app.searchResultView.render();
-//   };
-//
-//   return {
-//     config: _config,
-//     init: _initialize
-//   };
-// }());
-//
-// $(document).ready(app.init);
-
-
-
-
-
-
-
-  //activate search feature
-  // var recipeSearch = new SearchResults();
-  // recipeSearch.fetch().then(function (){
-  //   var searchView = new SearchView({collection: recipeSearch});
-  // });
-  // searchYum.init();
-
-//   route.router = new RecipeRoute();
-//   Backbone.history.start();
-// });
