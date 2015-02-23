@@ -63,3 +63,8 @@ label {
     @include transition(all 1s ease);
   }
 }
+
+
+.checked {
+  background-color: $pale;
+}
