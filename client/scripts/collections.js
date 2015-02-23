@@ -11,3 +11,8 @@ var RecipeCollection = Backbone.Collection.extend({
 //   model: SearchResult
 //
 // });
+
+var RandomCollection = Backbone.Collection.extend({
+  url: 'http://localhost:9000/recipes/random?limit=3',
+  model: RandomSearch
+});

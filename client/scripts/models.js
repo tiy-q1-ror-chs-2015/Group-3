@@ -14,3 +14,19 @@ var RecipeModel = Backbone.Model.extend ({
   },
 
 });
+
+
+var RandomSearch = Backbone.Model.extend({
+  urlRoot: 'http://localhost:9000/recipes/random?limit=3',
+  idAttributes: '_id',
+  defaults: function () {
+    return {
+      image: 'no image available',
+      recipeName: 'not available',
+      totalTime: 'not available'
+    };
+  },
+    initialize: function() {
+      console.log('random search model created');
+  },
+});

@@ -20,3 +20,25 @@ $head-font: 'Playfair Display', serif;
   -webkit-transition: $transition;
   transition:$transition;
 }
+
+
+@mixin borderRadius($borderRadius) {
+  border-radius: $borderRadius;
+  -moz-border-radius: $borderRadius;
+  -webkit-border-radius: $borderRadius;
+  -o-border-radius:  $borderRadius;
+}
+
+@mixin shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+
+@mixin scale($scale) {
+  transform: $scale;
+  -webkit-transform: $scale;
+  -o-transform:$scale;
+  -moz-transform: $scale;
+}

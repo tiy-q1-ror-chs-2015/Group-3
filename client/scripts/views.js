@@ -56,3 +56,52 @@ addOneRecipe : function(recipe) {
   alert("Recipe added!");
 }
 });//end appview
+
+
+var RandomView = Backbone.View.extend ({
+  template: _.template(templates.random),
+  tagName: 'article',
+  className: 'results',
+  initialize: function() {
+    console.log(this.el);
+  },
+  render: function() {
+    console.log('rendering result');
+    var markup = this.template(this.model.toJSON());
+    this.$el.html(markup);
+    return this;
+  }
+});
+
+var RandomCollectionView = Backbone.View.extend({
+  el:$('.randomOptions'),
+  initialize: function() {
+    console.log('random collection is initialized');
+    $('#surprise').on('click', function(e){
+      e.preventDefault();
+      console.log('surprise button clicked!');
+      var randomViewCollection = new RandomCollectionView();
+      randomViewCollection.addRandom();
+
+    });
+
+  },
+
+
+  addRandom: function() {
+    console.log('random recipes added');
+    $('.home').hide();
+    $('.randomPage').addClass('show');
+    this.addAllRandom();
+},
+
+addOneRandomSearch: function(random) {
+  var randomView = new RandomView({model: random});
+  $('.randomOptions').append(randomView.render().el);
+
+},
+
+addAllRandom: function() {
+  _.each(this.collection.models, this.addOneRandomSearch, this);
+}
+});
