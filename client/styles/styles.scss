@@ -10,37 +10,85 @@ h1, h2, h3 {
   font-family: $head-font;
 }
 
+h3 {
+  padding-left: 20px;
+}
+h4 {
+  font-family: $head-font;
+  font-size: 2em;
+  color: $brown;
+}
+
+p {
+padding-left: 20px;
+font-size: 1.3em;
+color: $brown;
+}
+
 label {
   input{
     display: inline-block;
   }
 }
 
-/* h1 {
+h1 {
   font-family: 'aladdin', sans-serif;
-  font-size: 15em;
+  font-size: 12em;
   text-align: center;
-} */
+  margin-top:15%;
+
+}
+
 .ingredients {
-  padding-left: 55px;
+  padding-left: 20px;
 }
 
   span{
     width: 45%;
     display: block;
     font-family: $pfont;
-    font-size: 1.3em;
+    font-size: 1.5em;
     display: inline-block;
     padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: -22px;
     &:hover {
     background-color: $pale;
+    color:$white;
+    border-radius: 5px;
+    @include transition(all 1s ease);
     }
   }
 
+.buttonwrap {
+  margin: auto;
+text-align: center;
+margin-top: 20%;
+button {
+  width: 300px;
+  height: 63px;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 1.5em;
+  background-color: rgba(164, 184, 191, 0.4);
+  @include borderRadius(84px 7px 84px 7px);
+  border: 10px double $pale;
+&:hover {
+  @include borderRadius(7px 84px 7px 84px);
+  background-color: $brown;
+  color: $white;
+  border-radius: 5px;
+  @include transition(all 1s ease);
+    }
+
+  }
+}
 ///RESULTS PAGE
 .options {
   display: flex;
   justify-content: center;
+  margin-top: 16%;
 }
 
 .results {
@@ -48,7 +96,7 @@ label {
   border-radius: 5px;
   margin: 30px;
   width:300px;
-  height: 500px;
+  height: 400px;
   opacity: 0.75;
   cursor: pointer;
   img {
@@ -64,7 +112,58 @@ label {
   }
 }
 
+.fa-4x {
+  color: $brown;
+  margin-top: 50px;
+  &:hover {
+    @include scale(scale(2));
+    @include transition(all .3s ease);
+  }
+}
 
+.modal-content {
+  span {
+    margin: 0;
+  }
+  h2, h3 {
+    color: $brown;
+
+  }
+}
+
+#recipePhoto {
+  width: 94%;
+  margin-left: 5px;
+}
+
+#recipeSearch {
+  margin: auto;
+  width: 240px;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 1.5em;
+  color: $blue;
+  background-color: rgba(164, 184, 191, 0.4);
+  &:hover {
+    background-color: $brown;
+    color: $white;
+    @include transition(all 1s ease);
+  }
+
+}
+
+.searchPage{
+  display: none;
+}
+
+.viewRecipe {
+  display: none;
+}
 .checked {
   background-color: $pale;
+  color: $white;
+}
+
+.show {
+  display: block;
 }

@@ -56,3 +56,22 @@ addOneRecipe : function(recipe) {
   alert("Recipe added!");
 }
 });//end appview
+
+
+//
+// var ResultsView = Backbone.View.extend({
+//   el:$('.options'),
+//
+//   initialize: function() {
+//     console.log('view initialized');
+//   },
+//
+//   events: {
+//     'submit #recipeSearch' : 'resultView'
+//   },
+
+  // resultView: function() {
+
+//   }
+//
+// });

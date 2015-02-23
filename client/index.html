@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Recipe Genie</title>
-<!-- <script src="//use.typekit.net/glz5uah.js"></script>
-<script>try{Typekit.load();}catch(e){}</script> -->
+<script src="//use.typekit.net/glz5uah.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
   <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
@@ -18,6 +18,7 @@
     <div class="col-md-3 ingredients">
       <article class="meat">
         <h3>PROTEIN</h3>
+        <p>Choose a protein</p>
         <span>None</span>
         <span>Beef</span>
         <span>Poultry</span>
@@ -27,6 +28,7 @@
       </article>
       <article class="produce">
         <h3>PRODUCE</h3>
+        <p>Choose some produce</p>
         <span>Leafy Green</span>
         <span>Root Veggie</span>
         <span>Fruit</span>
@@ -36,6 +38,7 @@
       </article>
       <article class="type">
         <h3>TYPE</h3>
+        <p>Choose what kind of meal you want</p>
         <span>Appetizer</span>
         <span>Entree</span>
         <span>Dessert</span>
@@ -43,12 +46,10 @@
         <span>Side</span>
         <span>Soup & Salad</span>
       </article>
-      <input type="text" id="searchRecipes" name='searchRecipes'>
-
-      <button type='submit' id='recipeSearch'>Search</button>
+      <button type='submit' class="btn btn-default" id='recipeSearch'>Search</button>
     </div>
     <div class="col-md-9">
-      <h1>Recipe Genie!</h1>
+      <h1>Recipe Genie</h1>
       <div class="buttonwrap">
         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" id="addNew">ADD RECIPE</button>
         <button class="btn btn-default" id="surprise">SURPRISE!</button>
@@ -57,16 +58,17 @@
   </div>
 </div>
 <!-- display search page -->
+<div class="searchPage">
   <div class="row">
     <div class="col-md-12">
       <div class="container">
-        <button>GO BACK</button>
+        <a href"" id="goBack"><i class="fa fa-arrow-left fa-4x"></i></a>
         <div class="options">
 
       </div>
-      <button>SEE MORE</button>
     </div>
   </div>
+</div>
 </div>
 <!-- add recipe page -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

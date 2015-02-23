@@ -48,8 +48,16 @@ var searchYum = {
         console.log('all items checked');
         searchYum.getSearch();
       }
+      $('.home').hide();
+      $('.searchPage').addClass('show');
 
+    });
 
+    $('#goBack').on('click', function(e){
+      e.preventDefault();
+      $('.home').addClass('show');
+      $('.searchPage').removeClass('show');
+      location.reload();
     });
 
   },
@@ -265,6 +273,7 @@ $(document).ready(function(){
   var recipeCollection = new RecipeCollection();
   recipeCollection.fetch().then(function () {
     var recipeCollectionView = new RecipeCollectionView({collection: recipeCollection});
+
   });
   searchYum.init();
 });
