@@ -275,5 +275,11 @@ $(document).ready(function(){
     var recipeCollectionView = new RecipeCollectionView({collection: recipeCollection});
 
   });
+
+  var randomCollection = new RandomCollection();
+  randomCollection.fetch().then(function () {
+    var randomCollectionView = new RandomCollectionView({collection: randomCollection});
+  });
+
   searchYum.init();
 });

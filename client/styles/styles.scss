@@ -91,6 +91,10 @@ button {
   margin-top: 16%;
 }
 
+.randomOptions {
+  @extend .options;
+}
+
 .results {
   border: 5px double $brown;
   border-radius: 5px;
@@ -154,6 +158,10 @@ button {
 
 .searchPage{
   display: none;
+}
+
+.randomPage {
+  display:none;
 }
 
 .viewRecipe {

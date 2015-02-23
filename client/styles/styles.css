@@ -84,7 +84,7 @@ span {
       -webkit-transition: all 1s ease;
       transition: all 1s ease; }
 
-.options {
+.options, .randomOptions {
   display: flex;
   justify-content: center;
   margin-top: 16%; }
@@ -148,6 +148,9 @@ span {
     transition: all 1s ease; }
 
 .searchPage {
+  display: none; }
+
+.randomPage {
   display: none; }
 
 .viewRecipe {
