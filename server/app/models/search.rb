@@ -108,6 +108,7 @@ class Search
     result = Recipe.find(filtered_recipe_ids.to_a)
     # apply our search term if it exists
     if params[:q]
+      q = URI::unescape(params[:q])
       result = result & Recipe.where("name like \'%#{params[:q]}%\'")
     end
     # setup appropriate limit and offset parameters
