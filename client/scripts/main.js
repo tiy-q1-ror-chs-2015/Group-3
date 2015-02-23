@@ -73,14 +73,14 @@ var searchYum = {
 
 
   getSearch: function() {
-    var urlString = (searchYum.config.baseURL + '/search?protein=' + $('.meat').find('.checked').html() + '&produce=' + $('.produce').find('.checked').html() + '&type=' + $('.type').find('.checked').html() + '&limit=3').toLowerCase();
+    var urlString = (searchYum.config.baseURL + '/search?protein=' + $('.meat').find('.checked').data('key') + '&produce=' + $('.produce').find('.checked').data('key') + '&type=' + $('.type').find('.checked').data('key') + '&limit=3').toLowerCase();
 
     $.ajax({
       url: urlString,
       type: 'GET',
       dataType: 'JSON',
       success: function(data) {
-        console.log($('.meat').find('.checked').html(),$('.produce').find('.checked').html(),  $('.type').find('.checked').html());
+        console.log($('.meat').find('.checked').data('key'),$('.produce').find('.checked').data('key'),  $('.type').find('.checked').data('key'));
         data.recipes.forEach(function(item, index, array){
           console.log('iteration activated. ', item.name);
           $('.options').append(
